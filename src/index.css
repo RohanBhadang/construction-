@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  color: #333;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold text-brand-navy mb-4 relative inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  height: 3px;
+  width: 60px;
+  background-color: #f2a900;
+}
+
+.btn-primary {
+  @apply inline-block bg-brand-gold hover:bg-brand-gold2 text-brand-navy font-semibold px-7 py-3 rounded-sm transition-colors duration-300 tracking-wide;
+}
+
+.container-x {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
