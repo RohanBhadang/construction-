@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { siteInfo, navLinks } from '../data/siteData'
+import logo from '../assets/logo/logo.png'
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -10,18 +11,8 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-white shadow-md">
       <div className="container-x flex items-center justify-between py-3">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2.5 shrink-0">
-          <span className="flex items-center justify-center h-11 w-11 rounded-sm bg-brand-navy text-brand-gold font-extrabold text-lg">
-            AC
-          </span>
-          <span className="leading-tight">
-            <span className="block font-extrabold text-brand-navy text-base md:text-lg tracking-wide">
-              AKHILESH
-            </span>
-            <span className="block font-medium text-brand-gray text-[11px] md:text-xs tracking-widest -mt-0.5">
-              CONSTRUCTION
-            </span>
-          </span>
+        <Link to="/" className="flex items-center shrink-0">
+          <img src={logo} alt="Akhilesh Construction" className="h-10 md:h-12 w-auto" />
         </Link>
 
         {/* Desktop nav */}
@@ -49,8 +40,14 @@ export default function Navbar() {
                 )}
               </NavLink>
 
-              {link.children && openDropdown === link.label && (
-                <div className="absolute left-0 top-full min-w-[260px] bg-white shadow-xl border-t-2 border-brand-gold py-2">
+              {link.children && (
+                <div
+                  className={`absolute left-0 top-full min-w-[260px] bg-white shadow-xl border-t-2 border-brand-gold py-2 origin-top transition-all duration-200 ${
+                    openDropdown === link.label
+                      ? 'opacity-100 scale-y-100 pointer-events-auto'
+                      : 'opacity-0 scale-y-95 pointer-events-none'
+                  }`}
+                >
                   {link.children.map((child) => (
                     <Link
                       key={child.label}
@@ -82,19 +79,21 @@ export default function Navbar() {
       </div>
 
       {/* Mobile nav */}
-      {mobileOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 max-h-[80vh] overflow-y-auto">
-          {navLinks.map((link) => (
-            <MobileNavItem key={link.label} link={link} onNavigate={() => setMobileOpen(false)} />
-          ))}
-          <a
-            href={`tel:${siteInfo.phone.replace(/\s/g, '')}`}
-            className="block mx-4 my-3 text-center btn-primary"
-          >
-            Call {siteInfo.phone}
-          </a>
-        </div>
-      )}
+      <div
+        className={`lg:hidden bg-white border-t border-gray-100 overflow-y-auto transition-all duration-300 ease-out ${
+          mobileOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+        }`}
+      >
+        {navLinks.map((link) => (
+          <MobileNavItem key={link.label} link={link} onNavigate={() => setMobileOpen(false)} />
+        ))}
+        <a
+          href={`tel:${siteInfo.phone.replace(/\s/g, '')}`}
+          className="block mx-4 my-3 text-center btn-primary"
+        >
+          Call {siteInfo.phone}
+        </a>
+      </div>
     </header>
   )
 }

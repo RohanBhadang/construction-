@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
 import HeroSlider from '../components/HeroSlider'
 import ClientsSection from '../components/ClientsSection'
-import { firmProfile, natureOfBusiness, siteInfo } from '../data/siteData'
+import StatCounter from '../components/StatCounter'
+import ExpertiseCard from '../components/ExpertiseCard'
+import PipelinePattern from '../components/PipelinePattern'
+import { firmProfile, natureOfBusiness, stats, siteInfo } from '../data/siteData'
 
 export default function Home() {
   return (
@@ -29,18 +32,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Stats strip */}
+      <section className="relative py-16 bg-brand-navy overflow-hidden">
+        <PipelinePattern />
+        <div className="container-x relative grid grid-cols-2 md:grid-cols-4 gap-8">
+          {stats.map((s) => (
+            <StatCounter key={s.label} value={s.value} suffix={s.suffix} label={s.label} />
+          ))}
+        </div>
+      </section>
+
       {/* Nature of business snapshot */}
       <section className="py-16 md:py-24 bg-brand-light">
         <div className="container-x">
           <h2 className="section-title mx-auto text-center block w-fit">NATURE OF BUSINESS</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
             {natureOfBusiness.slice(0, 6).map((item, i) => (
-              <div key={i} className="flex items-start gap-3 bg-white rounded-sm shadow-sm p-5">
-                <span className="flex items-center justify-center h-8 w-8 shrink-0 rounded-full bg-brand-gold/15 text-brand-gold text-xs font-bold">
-                  {i + 1}
-                </span>
-                <p className="text-sm text-brand-gray leading-relaxed">{item}</p>
-              </div>
+              <ExpertiseCard key={i} text={item.text} icon={item.icon} />
             ))}
           </div>
           <div className="text-center mt-8">
@@ -52,8 +60,9 @@ export default function Home() {
       </section>
 
       {/* CTA strip */}
-      <section className="py-14 bg-brand-navy">
-        <div className="container-x flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      <section className="relative py-14 bg-brand-navy overflow-hidden">
+        <PipelinePattern />
+        <div className="container-x relative flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div>
             <h3 className="text-white text-2xl font-bold">Have a pipeline or civil project in mind?</h3>
             <p className="text-gray-300 mt-1">Talk to our team today — {siteInfo.phones[0]}</p>

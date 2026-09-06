@@ -1,16 +1,22 @@
 // Central content store for Akhilesh Construction, sourced from the firm's
 // official profile document.
 
-import heroPipeLaying from '../assets/images/hero-pipe-laying.jpg'
-import hddMachine from '../assets/images/hdd-machine.jpg'
-import excavatorWork from '../assets/images/excavator-work.jpg'
-import roadRoller from '../assets/images/road-roller.jpg'
-import cranePipeCoastal from '../assets/images/crane-pipe-coastal.jpg'
-import cngStation from '../assets/images/cng-station.jpg'
-import terminalPiping from '../assets/images/terminal-piping.jpg'
-import controlPanelInstall from '../assets/images/control-panel-install.jpg'
-import pipeTrenchingTeam from '../assets/images/pipe-trenching-team.jpg'
-import gasRegulatorPanel from '../assets/images/gas-regulator-panel.jpg'
+// All site imagery below is high-resolution (2000px+ wide) and sourced from a
+// free-to-use stock library, licensed for commercial/website use.
+const pexels = (id, w = 2000) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=${w}`
+
+const heroMainImage = pexels(24245327, 2400) // pipe laying at sunset, coastal site
+const heroPipeLaying = heroMainImage
+const hddMachine = pexels(31249536) // directional drilling / boring machine on site
+const excavatorWork = pexels(13098128) // excavator at construction site
+const roadRoller = pexels(12228684) // road roller & construction machinery
+const cranePipeCoastal = pexels(18399899) // tower crane against sky
+const cngStation = pexels(7168505) // gas pump / fuel station
+const terminalPiping = pexels(36825977) // industrial pipeline system, plant
+const controlPanelInstall = pexels(33706880) // industrial electrical control room
+const pipeTrenchingTeam = pexels(37627672) // trench with pipes at construction site
+const gasRegulatorPanel = pexels(5711732) // industrial pipes & valves
 
 export const siteInfo = {
   name: 'Akhilesh Construction',
@@ -51,7 +57,7 @@ export const heroSlides = [
   {
     title: 'We Build the Pipelines That Power India',
     subtitle: 'Civil & Mechanical Engineering Contractors for Oil & Gas Pipeline Projects',
-    image: heroPipeLaying,
+    image: heroMainImage,
   },
   {
     title: 'City Gas Distribution, Delivered End to End',
@@ -77,18 +83,18 @@ export const firmProfile = {
 }
 
 export const natureOfBusiness = [
-  'Road Development',
-  'Boundary Wall Development',
-  'RCC Block Construction of Oil & Gas Buildings',
-  'Laying & commissioning of CGD pipeline projects',
-  'Mechanical Piping, Civil, Structural, Flare Job, Insulation & Painting',
-  'Development, Laying & Commissioning of City Gas Distribution Network (Pipeline)',
-  'Engineering, supply, installation, testing & commissioning of Pressure Reduction Stations',
-  'Plant Piping',
-  'Horizontal boring below roads, railway tracks & canals',
-  'Engineering, supply, installation, testing & commissioning of Cathodic Protection systems',
-  'CNG pumps & associated works at terminals',
-  'Laying & commissioning of MDPE Pipeline',
+  { text: 'Road Development', icon: 'road' },
+  { text: 'Boundary Wall Development', icon: 'wall' },
+  { text: 'RCC Block Construction of Oil & Gas Buildings', icon: 'building' },
+  { text: 'Laying & commissioning of CGD pipeline projects', icon: 'pipeline' },
+  { text: 'Mechanical Piping, Civil, Structural, Flare Job, Insulation & Painting', icon: 'weld' },
+  { text: 'Development, Laying & Commissioning of City Gas Distribution Network (Pipeline)', icon: 'network' },
+  { text: 'Engineering, supply, installation, testing & commissioning of Pressure Reduction Stations', icon: 'gauge' },
+  { text: 'Plant Piping', icon: 'valve' },
+  { text: 'Horizontal boring below roads, railway tracks & canals', icon: 'drill' },
+  { text: 'Engineering, supply, installation, testing & commissioning of Cathodic Protection systems', icon: 'shield' },
+  { text: 'CNG pumps & associated works at terminals', icon: 'pump' },
+  { text: 'Laying & commissioning of MDPE Pipeline', icon: 'pipesegment' },
 ]
 
 export const visionMission = {
@@ -133,12 +139,21 @@ export const machinery = [
 ]
 
 export const clients = [
-  { name: 'Aavantika Gas Limited' },
-  { name: 'Green Gas Limited' },
-  { name: 'Indian Oil Corporation (IOCL)' },
-  { name: 'Indraprastha Gas Limited (IGL)' },
-  { name: 'Central UP Gas Limited (CUGL)' },
-  { name: 'Gujarat Gas Limited' },
+  { name: 'Aavantika Gas Limited', code: 'AGL', color: '#e8511f' },
+  { name: 'Green Gas Limited', code: 'GGL', color: '#1f8a3d' },
+  { name: 'Indian Oil Corporation', code: 'IOCL', color: '#0b63b3' },
+  { name: 'Indraprastha Gas Limited', code: 'IGL', color: '#d9971f' },
+  { name: 'Central UP Gas Limited', code: 'CUGL', color: '#a3242f' },
+  { name: 'Gujarat Gas Limited', code: 'GGAS', color: '#1f7a6c' },
+]
+
+// Headline figures shown on the home page — each one derived directly from the
+// firm data above rather than invented, so the numbers stay honest as content changes.
+export const stats = [
+  { value: new Date().getFullYear() - siteInfo.founded, suffix: '+', label: 'Years in Pipeline & Civil Works' },
+  { value: clients.length, suffix: '', label: 'Major Gas Companies Served' },
+  { value: machinery.length, suffix: '+', label: 'Machinery & Equipment Types' },
+  { value: natureOfBusiness.length, suffix: '', label: 'Core Service Verticals' },
 ]
 
 export const projectCategories = [

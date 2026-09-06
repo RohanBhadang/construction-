@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { siteInfo } from '../data/siteData'
+import PipelinePattern from '../components/PipelinePattern'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' })
@@ -15,8 +16,9 @@ export default function Contact() {
 
   return (
     <>
-      <section className="bg-brand-navy py-14 md:py-20">
-        <div className="container-x">
+      <section className="relative bg-brand-navy py-14 md:py-20 overflow-hidden">
+        <PipelinePattern />
+        <div className="container-x relative">
           <h1 className="text-white text-3xl md:text-4xl font-extrabold">Contact us</h1>
           <p className="text-gray-300 mt-2 max-w-2xl">
             Get in touch with Akhilesh Construction for enquiries, tenders or project discussions.

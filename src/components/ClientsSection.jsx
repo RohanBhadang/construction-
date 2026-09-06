@@ -1,17 +1,20 @@
 import { clients } from '../data/siteData'
+import ClientBadge from './ClientBadge'
 
 export default function ClientsSection({ title = 'OUR CLIENTS' }) {
+  const track = [...clients, ...clients]
+
   return (
-    <section className="py-16 bg-brand-light">
+    <section className="py-16 bg-brand-light overflow-hidden">
       <div className="container-x">
         <h2 className="section-title mx-auto text-center block w-fit">{title}</h2>
-        <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
-          {clients.map((client, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-sm shadow-sm hover:shadow-md transition-shadow flex items-center justify-center text-center p-5 h-28"
-            >
-              <span className="text-sm font-semibold text-brand-navy leading-snug">{client.name}</span>
+      </div>
+
+      <div className="mt-10 group [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+        <div className="flex w-max gap-5 px-5 animate-marquee group-hover:[animation-play-state:paused] motion-reduce:animate-none">
+          {track.map((client, i) => (
+            <div key={i} className="w-64 shrink-0">
+              <ClientBadge client={client} />
             </div>
           ))}
         </div>

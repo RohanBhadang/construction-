@@ -56,7 +56,7 @@ npm run preview
 ## 🎨 Content Source & Notes
 
 - Saara text content (Firm Profile, Nature of Business, Mission, Vision, HSE Policy, Jobs Executed, Machinery list, Clients) directly Akhilesh Construction ki firm profile PDF se liya gaya hai.
-- **Images**: Hero, gallery aur project images asli firm profile PDF me se extract kiye gaye real work photos hain (HDD machine, excavator, pipeline laying team, CNG station, terminal piping, trenching work) — `src/assets/images/` me stored hain.
+- **Images**: Hero, gallery aur project images ab high-resolution stock photos hain (pipeline, excavator, drilling rig, road roller, gas station, industrial piping etc.), hosted via URLs in `src/data/siteData.js`. Original low-res photos ab `src/assets/images/` me unused pade hain — chaho to apni real site/project photos se replace kar sakte ho.
 - **Jaan-bujh kar exclude kiya gaya**: PAN Card, GST Certificate, ID proof, bank details, aur individual work-order/tender scanned documents — ye sensitive/private information hai jo public website par dikhana appropriate nahi hai. Agar future me "Certifications" ya "Downloads" section chahiye, unhe securely (password-protected ya sirf serious enquiries ke liye) share karna recommend karta hoon, poori public website par nahi.
 - Client logos available nahi the (sirf naam), isliye name-based badges use kiye hain. Asli client logos mil jayein to `ClientsSection.jsx` aur `Clients.jsx` me easily image tags se replace kiya ja sakta hai.
 - Colors: navy blue (`brand-navy`) + gold accent (`brand-gold`) — professional infrastructure/construction look, `tailwind.config.js` me define hai.

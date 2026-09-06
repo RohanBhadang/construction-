@@ -1,13 +1,15 @@
 import ExpertiseCard from '../components/ExpertiseCard'
 import ClientsSection from '../components/ClientsSection'
 import { firmProfile, natureOfBusiness, visionMission, hsePolicy, siteInfo } from '../data/siteData'
+import PipelinePattern from '../components/PipelinePattern'
 
 export default function About() {
   return (
     <>
       {/* Page header */}
-      <section className="bg-brand-navy py-14 md:py-20">
-        <div className="container-x">
+      <section className="relative bg-brand-navy py-14 md:py-20 overflow-hidden">
+        <PipelinePattern />
+        <div className="container-x relative">
           <h1 className="text-white text-3xl md:text-4xl font-extrabold">About us</h1>
           <p className="text-gray-300 mt-2 max-w-2xl">
             Founded by {siteInfo.founder} in {siteInfo.founded}, building trusted pipeline & civil infrastructure.
@@ -39,15 +41,16 @@ export default function About() {
           <p className="text-brand-gray mb-8 text-sm md:text-base">The nature of our business activities includes:</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {natureOfBusiness.map((item, i) => (
-              <ExpertiseCard key={i} text={item} />
+              <ExpertiseCard key={i} text={item.text} icon={item.icon} />
             ))}
           </div>
         </div>
       </section>
 
       {/* Vision Mission */}
-      <section id="vision-mission" className="py-16 md:py-24 bg-brand-navy text-white scroll-mt-24">
-        <div className="container-x grid md:grid-cols-2 gap-10">
+      <section id="vision-mission" className="relative py-16 md:py-24 bg-brand-navy text-white scroll-mt-24 overflow-hidden">
+        <PipelinePattern />
+        <div className="container-x relative grid md:grid-cols-2 gap-10">
           <div>
             <h3 className="text-brand-gold font-bold text-xl mb-3 tracking-wide">OUR MISSION</h3>
             <p className="text-gray-200 leading-relaxed text-sm md:text-base">{visionMission.mission}</p>
