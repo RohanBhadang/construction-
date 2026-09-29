@@ -22,14 +22,14 @@ export const siteInfo = {
   name: 'Akhilesh Construction',
   fullName: 'Akhilesh Construction',
   formerName: 'Civil & Mechanical Engineering Contractors — Oil & Gas Pipeline Projects',
-  tagline: 'Building Reliable Pipeline & Civil Infrastructure Since 2017',
+  tagline: 'Building Reliable Pipeline & Civil Infrastructure Since 2012',
   phones: ['70000 32606', '90096 22223', '70000 19505'],
   phone: '70000 32606',
   emails: ['akhilesh.construction88@gmail.com', 'akhileshsingh65@ymail.com'],
   email: 'akhilesh.construction88@gmail.com',
   address: 'B-209, Veena Nagar, Indore Sukhaliya, Near MR-10 Square, Indore- 452010.',
   founder: 'Mr. Akhilesh Singh',
-  founded: 2017,
+  founded: 2012,
   mapEmbed: `https://www.google.com/maps?q=${encodeURIComponent(
     'B-209, Veena Nagar, Indore Sukhaliya, Near MR-10 Square, Indore- 452010'
   )}&output=embed`,
@@ -75,7 +75,7 @@ export const firmProfile = {
   heading: 'FIRM PROFILE',
   paragraphs: [
     'Akhilesh Construction (AC) introduces itself for Oil & Gas Pipeline projects, City Gas Distribution Network Projects, Terminal Works, HDD etc. We are a leading Mechanical & Civil contractor mainly dealing with private sector organizations in India.',
-    `Akhilesh Construction Energy Projects firm was founded by ${'Mr. Akhilesh Singh'} in the year 2017, and successfully completed various pipeline projects within three years of its establishment. With a diversified team, AC has commissioned various City Gas Distribution Projects, MDPE Pipelines, Plant Piping, Terminal Fabrication, etc., and works as a Civil Contractor for the M.P. Government.`,
+    `Akhilesh Construction Energy Projects firm was founded by ${'Mr. Akhilesh Singh'} in the year 2012, and successfully completed various pipeline projects within three years of its establishment. With a diversified team, AC has commissioned various City Gas Distribution Projects, MDPE Pipelines, Plant Piping, Terminal Fabrication, etc., and works as a Civil Contractor for the M.P. Government.`,
     'The growth in pipeline construction and the services we offer have made us a trusted pipeline company since incorporation — working with Aavantika Gas Limited, Green Gas Limited, UP Gas Limited, Indraprastha Gas Limited, Indian Oil Corporation and Gujarat Gas Limited — and we have been awarded numerous projects under various reputed PMCs.',
     'AC has drawn the best available talent from the country to build a well-knit support team providing complete services including Residual/Detail Engineering, Construction, Procurement and Commissioning of CGD Pipeline including Tap-Off, SV Station, City Gas Station, City Gas Distribution Network, Dispatch Terminal and Receiving Terminal.',
   ],
