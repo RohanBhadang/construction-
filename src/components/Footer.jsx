@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { siteInfo } from '../data/siteData'
 import PipelinePattern from './PipelinePattern'
 import logoWhite from '../assets/logo/logo-white.png'
@@ -22,11 +23,11 @@ export default function Footer() {
         <div>
           <h4 className="text-white font-semibold uppercase tracking-wide mb-4 text-sm">Pages</h4>
           <ul className="space-y-2 text-sm">
-            <li><a href="/about" className="hover:text-brand-gold transition-colors">About us</a></li>
-            <li><a href="/projects" className="hover:text-brand-gold transition-colors">Projects</a></li>
-            <li><a href="/clients" className="hover:text-brand-gold transition-colors">Clients</a></li>
-            <li><a href="/gallery" className="hover:text-brand-gold transition-colors">Gallery</a></li>
-            <li><a href="/contact" className="hover:text-brand-gold transition-colors">Contact Us</a></li>
+            <li><Link to="/about" className="hover:text-brand-gold transition-colors">About us</Link></li>
+            <li><Link to="/projects" className="hover:text-brand-gold transition-colors">Projects</Link></li>
+            <li><Link to="/clients" className="hover:text-brand-gold transition-colors">Clients</Link></li>
+            <li><Link to="/gallery" className="hover:text-brand-gold transition-colors">Gallery</Link></li>
+            <li><Link to="/contact" className="hover:text-brand-gold transition-colors">Contact Us</Link></li>
           </ul>
         </div>
 

@@ -12,7 +12,7 @@ export default function Navbar() {
       <div className="container-x flex items-center justify-between py-3">
         {/* Logo */}
         <Link to="/" className="flex items-center shrink-0">
-          <img src={logo} alt="Akhilesh Construction" className="h-10 md:h-12 w-auto" />
+          <img src={logo} alt="Akhilesh Construction" className="h-12 md:h-16 w-auto" />
         </Link>
 
         {/* Desktop nav */}
