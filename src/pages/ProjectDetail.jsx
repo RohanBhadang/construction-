@@ -1,5 +1,6 @@
 import { Link, useParams, Navigate } from 'react-router-dom'
 import { projectCategories } from '../data/siteData'
+import PhotoGrid from '../components/PhotoGrid'
 
 export default function ProjectDetail() {
   const { slug } = useParams()
@@ -30,6 +31,29 @@ export default function ProjectDetail() {
               Enquire About This Service
             </Link>
           </div>
+        </div>
+      </section>
+
+      {project.photos?.length > 0 && (
+        <section className="pb-16 md:pb-24 bg-white">
+          <div className="container-x">
+            <h2 className="section-title">PHOTOS FROM SITE</h2>
+            <div className="mt-8">
+              <PhotoGrid photos={project.photos} />
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section className="bg-brand-light py-10">
+        <div className="container-x flex flex-wrap gap-3">
+          {projectCategories
+            .filter((p) => p.slug !== project.slug)
+            .map((p) => (
+              <Link key={p.slug} to={`/projects/${p.slug}`} className="text-sm text-brand-navy hover:text-brand-gold underline-offset-4 hover:underline">
+                {p.title}
+              </Link>
+            ))}
         </div>
       </section>
     </>

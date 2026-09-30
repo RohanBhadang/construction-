@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { projectCategories, jobsExecuted, machinery } from '../data/siteData'
 import { CheckBadgeIcon, CraneIcon } from '../components/Icons'
 import PipelinePattern from '../components/PipelinePattern'
+import MachineryShowcase from '../components/MachineryShowcase'
 
 export default function Projects() {
   return (
@@ -71,7 +72,10 @@ export default function Projects() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container-x">
           <h2 className="section-title">LIST OF IMPORTANT MACHINERIES</h2>
-          <div className="mt-8 overflow-x-auto rounded-sm shadow-sm border border-gray-100">
+          <div className="mt-8">
+            <MachineryShowcase />
+          </div>
+          <div className="mt-10 overflow-x-auto rounded-sm shadow-sm border border-gray-100">
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-brand-navy text-white text-left">

@@ -53,3 +53,12 @@ npm run build
 npm run preview
 ```
 
+
+## 📸 Photos & Logo (kaise kaam karta hai)
+
+- **Logo**: `Navbar.jsx` me `import logo from '../assets/logo/logo.png'` hota hai aur `<img src={logo} />` me lagta hai. Vite build ke time file ko `dist/assets/logo-<hash>.png` bana deta hai. Footer me `logo-white.png` isi tarah. Favicon `public/` me hai aur `index.html` se direct `/favicon.png` link hota hai.
+- **Photos**: `src/assets/photos/full` (1600px) + `thumb` (640px). Nayi photo add karne ke liye dono folders me same naam se `.jpg` rakho aur `src/data/photos.js` ki `list` me ek line add karo.
+- **Clients**: `src/data/siteData.js` → `clients` (asli clients) aur `cgdSector` (India ke baaki CGD operators).
+
+## Client logos
+`src/assets/clients/` me official logo files daalo (naam = company code, e.g. `agl.png`, `iocl.png`). List `README.txt` me hai. Logo na ho to coloured code badge dikhta hai.

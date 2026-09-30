@@ -1,22 +1,18 @@
 // Central content store for Akhilesh Construction, sourced from the firm's
 // official profile document.
 
-// All site imagery below is high-resolution (2000px+ wide) and sourced from a
-// free-to-use stock library, licensed for commercial/website use.
-const pexels = (id, w = 2000) =>
-  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=${w}`
+// All imagery comes from the firm's own site photos (see ./photos.js).
+import { img, pick } from './photos'
 
-const heroMainImage = pexels(24245327, 2400) // pipe laying at sunset, coastal site
-const heroPipeLaying = heroMainImage
-const hddMachine = pexels(31249536) // directional drilling / boring machine on site
-const excavatorWork = pexels(13098128) // excavator at construction site
-const roadRoller = pexels(12228684) // road roller & construction machinery
-const cranePipeCoastal = pexels(18399899) // tower crane against sky
-const cngStation = pexels(7168505) // gas pump / fuel station
-const terminalPiping = pexels(36825977) // industrial pipeline system, plant
-const controlPanelInstall = pexels(33706880) // industrial electrical control room
-const pipeTrenchingTeam = pexels(37627672) // trench with pipes at construction site
-const gasRegulatorPanel = pexels(5711732) // industrial pipes & valves
+const heroMainImage = img('hdd-road-crossing')
+const heroPipeLaying = img('mdpe-nala-crossing')
+const hddMachine = img('hdd-xz200-rig')
+const roadRoller = img('excavator-site')
+const cngStation = img('station-commissioning-1')
+const terminalPiping = img('steel-pipe-laying-field')
+const pipeTrenchingTeam = img('mdpe-trench-road')
+const pngConnection = img('png-meter-wall')
+const corridorWorks = img('trench-works-corridor')
 
 export const siteInfo = {
   name: 'Akhilesh Construction',
@@ -57,17 +53,22 @@ export const heroSlides = [
   {
     title: 'We Build the Pipelines That Power India',
     subtitle: 'Civil & Mechanical Engineering Contractors for Oil & Gas Pipeline Projects',
-    image: heroMainImage,
+    image: img('steel-pipe-laying-field'),
+  },
+  {
+    title: 'Trenchless Crossings with Our Own HDD Rigs',
+    subtitle: 'Horizontal boring below roads, railway tracks & canals \u00b7 2 HDD Machines in-house',
+    image: img('hdd-road-crossing'),
   },
   {
     title: 'City Gas Distribution, Delivered End to End',
-    subtitle: 'MDPE Pipeline · Plant Piping · Terminal Works · HDD',
-    image: terminalPiping,
+    subtitle: 'MDPE Pipeline \u00b7 Plant Piping \u00b7 Terminal Works \u00b7 PNG Connections',
+    image: img('mdpe-nala-crossing'),
   },
   {
     title: 'Six Years. Six Major Gas Companies. Zero Compromise.',
     subtitle: 'Trusted by Aavantika Gas, IOCL, Green Gas, CUGL and more',
-    image: cngStation,
+    image: img('station-commissioning-1'),
   },
 ]
 
@@ -124,11 +125,11 @@ export const jobsExecuted = [
 ]
 
 export const machinery = [
-  { name: 'HDD Machine', qty: '02 Nos' },
-  { name: 'Welding Machine', qty: '04 Nos' },
+  { name: 'HDD Machine', qty: '02 Nos', image: img('hdd-xz200-rig'), note: 'XCMG XZ200 \u2014 trenchless crossings below roads, rails & canals' },
+  { name: 'Welding Machine', qty: '04 Nos', image: img('pipe-welding-sunset'), note: 'Steel pipeline welding & fabrication' },
   { name: '63 KVA DG Set', qty: '02 Nos' },
-  { name: 'JCB', qty: '01 No' },
-  { name: 'Hydra', qty: '01 No' },
+  { name: 'JCB', qty: '01 No', image: img('steel-pipe-laying-field'), note: 'Trenching, backfilling & pipe handling' },
+  { name: 'Hydra', qty: '01 No', image: img('crane-lifting-pipe'), note: 'Lifting & lowering of pipe strings' },
   { name: 'Holiday Machine', qty: '03 Nos' },
   { name: 'Air Compressor', qty: '02 Nos' },
   { name: 'Tractor & Trolley', qty: '02 Nos' },
@@ -145,13 +146,23 @@ export const clients = [
   { name: 'Indraprastha Gas Limited', code: 'IGL', color: '#d9971f' },
   { name: 'Central UP Gas Limited', code: 'CUGL', color: '#a3242f' },
   { name: 'Gujarat Gas Limited', code: 'GGAS', color: '#1f7a6c' },
+  { name: 'Sabarmati Gas Limited', code: 'SGL', color: '#00807f' },
+  { name: 'Vadodara Gas Limited', code: 'VGL', color: '#6a3d9a' },
+  { name: 'Haryana City Gas', code: 'HCG', color: '#b8471b' },
+  { name: 'Maharashtra Natural Gas Limited', code: 'MNGL', color: '#2b6cb0' },
+  { name: 'Godavari Gas Limited', code: 'GGPL', color: '#2f855a' },
+  { name: 'THINK Gas', code: 'THINK', color: '#d0451b' },
+  { name: 'Bhagyanagar Gas Limited', code: 'BGL', color: '#8a5a00' },
 ]
+
+// Stats keep using the original 6 core clients so the numbers stay unchanged
+const CORE_CLIENT_COUNT = 6
 
 // Headline figures shown on the home page — each one derived directly from the
 // firm data above rather than invented, so the numbers stay honest as content changes.
 export const stats = [
   { value: new Date().getFullYear() - siteInfo.founded, suffix: '+', label: 'Years in Pipeline & Civil Works' },
-  { value: clients.length, suffix: '', label: 'Major Gas Companies Served' },
+  { value: CORE_CLIENT_COUNT, suffix: '', label: 'Major Gas Companies Served' },
   { value: machinery.length, suffix: '+', label: 'Machinery & Equipment Types' },
   { value: natureOfBusiness.length, suffix: '', label: 'Core Service Verticals' },
 ]
@@ -163,34 +174,47 @@ export const projectCategories = [
     description:
       'End-to-end laying and commissioning of CGD pipelines including tap-off points, SV stations, city gas stations, dispatch and receiving terminals.',
     image: heroPipeLaying,
+    photos: pick('mdpe-nala-crossing', 'bridge-nala-works', 'mdpe-in-trench', 'mdpe-trench-road', 'trench-with-jcb', 'pipes-near-nala', 'mdpe-tee-connection', 'excavator-site'),
   },
   {
     slug: 'mdpe-pipeline',
     title: 'MDPE & Steel Pipeline Laying',
     description:
       'Laying and commissioning of MDPE, steel and GI gas pipelines along with communication pipelines across urban terrain.',
-    image: pipeTrenchingTeam,
+    image: terminalPiping,
+    photos: pick('steel-pipe-laying-field', 'pipe-welding-sunset', 'pipe-cutting-grinding', 'pipe-stack-pooja', 'pipe-in-trench', 'black-pipe-trench', 'trench-works-corridor', 'tapping-tee-1', 'electrofusion-tee', 'tapping-tee-3', 'saddle-fitting'),
   },
   {
     slug: 'plant-terminal-piping',
     title: 'Plant & Terminal Piping',
     description:
       'Mechanical piping, structural work, flare jobs, insulation and painting at plants, terminals and dispatch stations.',
-    image: terminalPiping,
+    image: img('regulator-panel-piping'),
+    photos: pick('regulator-panel-piping', 'regulator-cage', 'station-commissioning-1', 'station-inauguration-crowd', 'station-inauguration-3'),
   },
   {
     slug: 'hdd-boring',
     title: 'Horizontal Directional Drilling (HDD)',
     description:
-      'Horizontal boring below roads, railway tracks and canals using dedicated HDD rigs for trenchless pipeline crossings.',
-    image: hddMachine,
+      'Horizontal boring below roads, railway tracks and canals using our own dedicated HDD rigs (2 Nos) for trenchless pipeline crossings.',
+    image: img('hdd-road-crossing'),
+    photos: pick('hdd-xz200-rig', 'hdd-road-crossing', 'hdd-rig-city-street', 'hdd-rig-crew', 'hdd-rig-orange', 'hdd-drill-rods', 'hdd-rig-nala-bank', 'hdd-rig-pooja', 'hdd-garlanded'),
   },
   {
-    slug: 'cng-terminal-works',
-    title: 'CNG Pump & Terminal Works',
+    slug: 'png-connections',
+    title: 'PNG Domestic & Commercial Connections',
     description:
-      'Installation and associated works for CNG pumps and terminal infrastructure for city gas retail outlets.',
-    image: cngStation,
+      'Service lines, GI risers, regulators and meter installations for homes, shops and commercial buildings, tied into the CGD network.',
+    image: pngConnection,
+    photos: pick('png-meter-wall', 'png-regulator-cabinet', 'png-house-connection', 'png-meter-installed', 'png-riser-pair', 'png-riser-warning', 'service-line-valve'),
+  },
+  {
+    slug: 'flyover-corridor-works',
+    title: 'Flyover & Corridor Pipeline Works',
+    description:
+      'Pipe handling, crane lifting and trench work along flyover and road corridors, executed with traffic and site safety in control.',
+    image: corridorWorks,
+    photos: pick('flyover-pipes', 'crane-lifting-pipe', 'trench-works-corridor'),
   },
   {
     slug: 'road-civil-works',
@@ -198,18 +222,27 @@ export const projectCategories = [
     description:
       'Road development, boundary wall construction and RCC block construction for oil & gas sector buildings.',
     image: roadRoller,
+    photos: pick('excavator-site', 'trench-with-jcb', 'bridge-nala-works', 'pipes-near-nala', 'site-crew', 'bhoomi-pujan-1'),
+  },
+  {
+    slug: 'cng-terminal-works',
+    title: 'CNG Pump & Terminal Works',
+    description:
+      'Installation and associated works for CNG pumps and terminal infrastructure for city gas retail outlets.',
+    image: cngStation,
+    photos: pick('station-commissioning-1', 'station-inauguration-crowd', 'station-inauguration-3', 'regulator-cage'),
   },
 ]
 
-export const galleryImages = [
-  heroPipeLaying,
-  hddMachine,
-  excavatorWork,
-  roadRoller,
-  cranePipeCoastal,
-  cngStation,
-  terminalPiping,
-  controlPanelInstall,
-  pipeTrenchingTeam,
-  gasRegulatorPanel,
-]
+// Home page "From the field" strip
+export const fieldHighlights = pick(
+  'pipe-welding-sunset',
+  'hdd-xz200-rig',
+  'mdpe-nala-crossing',
+  'steel-pipe-laying-field',
+  'png-meter-wall',
+  'tapping-tee-1'
+)
+
+// HDD spotlight on home page
+export const hddShowcase = pick('hdd-xz200-rig', 'hdd-road-crossing', 'hdd-rig-city-street', 'hdd-drill-rods')

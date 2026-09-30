@@ -2,6 +2,7 @@ import ExpertiseCard from '../components/ExpertiseCard'
 import ClientsSection from '../components/ClientsSection'
 import { firmProfile, natureOfBusiness, visionMission, hsePolicy, siteInfo } from '../data/siteData'
 import PipelinePattern from '../components/PipelinePattern'
+import FirmProfileVisual from '../components/FirmProfileVisual'
 
 export default function About() {
   return (
@@ -28,9 +29,7 @@ export default function About() {
               </p>
             ))}
           </div>
-          <div className="rounded-sm overflow-hidden shadow-xl">
-            <img src={firmProfile.image} alt="Pipeline terminal" className="w-full h-full object-cover" />
-          </div>
+          <FirmProfileVisual />
         </div>
       </section>
 

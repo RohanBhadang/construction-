@@ -4,7 +4,12 @@ import ClientsSection from '../components/ClientsSection'
 import StatCounter from '../components/StatCounter'
 import ExpertiseCard from '../components/ExpertiseCard'
 import PipelinePattern from '../components/PipelinePattern'
-import { firmProfile, natureOfBusiness, stats, siteInfo } from '../data/siteData'
+import HddSpotlight from '../components/HddSpotlight'
+import FirmProfileVisual from '../components/FirmProfileVisual'
+import WhyChooseUs from '../components/WhyChooseUs'
+import WorkProcess from '../components/WorkProcess'
+import Reveal from '../components/Reveal'
+import { firmProfile, natureOfBusiness, stats, siteInfo, fieldHighlights } from '../data/siteData'
 
 export default function Home() {
   return (
@@ -26,11 +31,11 @@ export default function Home() {
               READ MORE
             </Link>
           </div>
-          <div className="rounded-sm overflow-hidden shadow-xl">
-            <img src={firmProfile.image} alt="Terminal piping work" className="w-full h-full object-cover" />
-          </div>
+          <Reveal delay={120}><FirmProfileVisual /></Reveal>
         </div>
       </section>
+
+      <WhyChooseUs />
 
       {/* Stats strip */}
       <section className="relative py-16 bg-brand-navy overflow-hidden">
@@ -58,6 +63,30 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* HDD spotlight */}
+      <HddSpotlight />
+
+      {/* From the field */}
+      <section className="py-16 md:py-24 bg-brand-light">
+        <div className="container-x">
+          <h2 className="section-title mx-auto text-center block w-fit">FROM THE FIELD</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mt-10">
+            {fieldHighlights.map((p) => (
+              <Link key={p.slug} to="/gallery" className="group relative block h-44 md:h-64 overflow-hidden rounded-sm shadow-sm hover:shadow-xl transition-shadow">
+                <img src={p.thumb} alt={p.caption} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent" />
+                <span className="absolute bottom-2 left-3 right-3 text-white text-xs md:text-sm font-medium">{p.caption}</span>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link to="/gallery" className="btn-primary">VIEW FULL GALLERY</Link>
+          </div>
+        </div>
+      </section>
+
+      <WorkProcess />
 
       {/* CTA strip */}
       <section className="relative py-14 bg-brand-navy overflow-hidden">
