@@ -67,6 +67,13 @@ const list = [
   { slug: "hdd-garlanded", cat: "ceremony", caption: "HDD rig garlanded for the start", w: 648, h: 1152 },
   { slug: "flyover-pipes", cat: "corridor", caption: "Pipes along a flyover corridor", w: 1600, h: 900 },
   { slug: "crane-lifting-pipe", cat: "corridor", caption: "Crane lifting pipe on a corridor job", w: 900, h: 1600 },
+  { slug: "site-flyover-crew", cat: "ceremony", caption: "On site beneath a flyover corridor", w: 900, h: 1600 },
+  { slug: "event-globe-installation", cat: "ceremony", caption: "At an event venue beside a globe installation", w: 900, h: 1600 },
+  { slug: "event-venue-entrance", cat: "ceremony", caption: "Event venue decorated for the convention", w: 900, h: 1600 },
+  { slug: "event-pbd-convention-1", cat: "ceremony", caption: "17th PBD Convention, Indore (Jan 2023)", w: 1600, h: 900 },
+  { slug: "event-pbd-convention-2", cat: "ceremony", caption: "Attending the PBD Convention in Indore", w: 1600, h: 900 },
+  { slug: "event-g20-india-2023", cat: "ceremony", caption: "At the G20 Bharat 2023 display", w: 1600, h: 900 },
+  { slug: "event-mp-odop-display", cat: "ceremony", caption: "Madhya Pradesh ODOP display at the event", w: 1600, h: 900 },
 ]
 
 export const photos = list.map((p) => ({
