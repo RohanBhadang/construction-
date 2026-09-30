@@ -1,3 +1,4 @@
+import Seo from '../components/Seo'
 import ExpertiseCard from '../components/ExpertiseCard'
 import ClientsSection from '../components/ClientsSection'
 import { firmProfile, natureOfBusiness, visionMission, hsePolicy, siteInfo } from '../data/siteData'
@@ -7,6 +8,7 @@ import FirmProfileVisual from '../components/FirmProfileVisual'
 export default function About() {
   return (
     <>
+      <Seo title="About Us" description="About Akhilesh Construction, Indore: civil & mechanical engineering contractors for oil & gas pipelines, CGD networks, HDD and terminal works, founded by Mr. Akhilesh Singh in 2012." />
       {/* Page header */}
       <section className="relative bg-brand-navy py-14 md:py-20 overflow-hidden">
         <PipelinePattern />

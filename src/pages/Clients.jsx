@@ -1,3 +1,4 @@
+import Seo from '../components/Seo'
 import { clients } from '../data/siteData'
 import ClientBadge from '../components/ClientBadge'
 import PipelinePattern from '../components/PipelinePattern'
@@ -5,6 +6,7 @@ import PipelinePattern from '../components/PipelinePattern'
 export default function Clients() {
   return (
     <>
+      <Seo title="Our Clients" description="Akhilesh Construction works with leading City Gas Distribution companies including Aavantika Gas, Green Gas, IOCL, IGL, CUGL and Gujarat Gas." />
       <section className="relative bg-brand-navy py-14 md:py-20 overflow-hidden">
         <PipelinePattern />
         <div className="container-x relative">

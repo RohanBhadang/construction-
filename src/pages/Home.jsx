@@ -1,3 +1,4 @@
+import Seo from '../components/Seo'
 import { Link } from 'react-router-dom'
 import HeroSlider from '../components/HeroSlider'
 import ClientsSection from '../components/ClientsSection'
@@ -14,6 +15,7 @@ import { firmProfile, natureOfBusiness, stats, siteInfo, fieldHighlights } from 
 export default function Home() {
   return (
     <>
+      <Seo description="Akhilesh Construction, Indore (Madhya Pradesh): City Gas Distribution (CGD) pipeline, MDPE & steel pipe laying, HDD horizontal boring, PNG connections and civil works contractors since 2012." />
       <HeroSlider />
 
       {/* Firm profile snapshot */}
@@ -94,7 +96,7 @@ export default function Home() {
         <div className="container-x relative flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div>
             <h3 className="text-white text-2xl font-bold">Have a pipeline or civil project in mind?</h3>
-            <p className="text-gray-300 mt-1">Talk to our team today — {siteInfo.phones[0]}</p>
+            <p className="text-gray-300 mt-1">Talk to the Akhilesh Construction team in Indore today — {siteInfo.phones[0]}</p>
           </div>
           <Link to="/contact" className="btn-primary">
             Get In Touch

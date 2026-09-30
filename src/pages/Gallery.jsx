@@ -1,3 +1,4 @@
+import Seo from '../components/Seo'
 import { useMemo, useState } from 'react'
 import { photos, photoCategories } from '../data/photos'
 import PhotoGrid from '../components/PhotoGrid'
@@ -9,6 +10,7 @@ export default function Gallery() {
 
   return (
     <>
+      <Seo title="Photo Gallery" description="Real site photos of Akhilesh Construction: HDD rigs, MDPE pipeline laying, tap-offs, PNG meter connections and city gas station works in Madhya Pradesh." />
       <section className="relative bg-brand-navy py-14 md:py-20 overflow-hidden">
         <PipelinePattern />
         <div className="container-x relative">

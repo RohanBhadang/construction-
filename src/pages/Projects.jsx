@@ -1,3 +1,4 @@
+import Seo from '../components/Seo'
 import { Link } from 'react-router-dom'
 import { projectCategories, jobsExecuted, machinery } from '../data/siteData'
 import { CheckBadgeIcon, CraneIcon } from '../components/Icons'
@@ -7,6 +8,7 @@ import MachineryShowcase from '../components/MachineryShowcase'
 export default function Projects() {
   return (
     <>
+      <Seo title="Projects" description="CGD pipeline networks, MDPE and steel pipeline laying, HDD boring, PNG connections and plant piping projects executed by Akhilesh Construction, Indore, with our machinery list." />
       <section className="relative bg-brand-navy py-14 md:py-20 overflow-hidden">
         <PipelinePattern />
         <div className="container-x relative">

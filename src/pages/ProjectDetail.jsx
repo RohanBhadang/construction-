@@ -1,3 +1,4 @@
+import Seo from '../components/Seo'
 import { Link, useParams, Navigate } from 'react-router-dom'
 import { projectCategories } from '../data/siteData'
 import PhotoGrid from '../components/PhotoGrid'
@@ -10,6 +11,7 @@ export default function ProjectDetail() {
 
   return (
     <>
+      <Seo title={project.title} description={`${project.description} Executed by Akhilesh Construction, Indore.`} />
       <section className="bg-brand-navy py-14 md:py-20">
         <div className="container-x">
           <Link to="/projects" className="text-brand-gold text-sm font-medium hover:underline">

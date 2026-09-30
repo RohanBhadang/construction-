@@ -14,6 +14,7 @@ export default function Footer() {
             <img src={logoWhite} alt="Akhilesh Construction" className="h-10 w-auto" />
           </div>
           <p className="text-sm text-gray-400">{siteInfo.formerName}</p>
+          <p className="text-sm text-gray-400 mt-2">Akhilesh Construction, Indore — CGD pipeline, HDD & civil contractors in Madhya Pradesh.</p>
           <p className="text-sm text-gray-400 mt-2">
             Founded by {siteInfo.founder} in {siteInfo.founded}.
           </p>

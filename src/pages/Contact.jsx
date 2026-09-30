@@ -1,3 +1,4 @@
+import Seo from '../components/Seo'
 import { siteInfo } from '../data/siteData'
 import PipelinePattern from '../components/PipelinePattern'
 
@@ -22,6 +23,7 @@ const svg = (d) => (
 export default function Contact() {
   return (
     <>
+      <Seo title="Contact Us" description="Contact Akhilesh Construction, B-209 Veena Nagar, Sukhaliya, Indore 452010. Call 70000 32606 for CGD pipeline, HDD and civil contracting enquiries." />
       <section className="relative bg-brand-navy py-14 md:py-20 overflow-hidden">
         <PipelinePattern />
         <div className="container-x relative">
